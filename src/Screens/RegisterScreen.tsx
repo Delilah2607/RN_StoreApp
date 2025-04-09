@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {
   View,
@@ -9,6 +8,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Icon from 'react-native-vector-icons/FontAwesome'; // Importamos el ícono
 
 const RegisterScreen = ({ navigation }: any) => {
   const [userName, setUserName] = useState('');
@@ -44,6 +44,11 @@ const RegisterScreen = ({ navigation }: any) => {
 
   return (
     <View style={styles.container}>
+      {/* Icono de usuario dentro de un círculo */}
+      <View style={styles.iconContainer}>
+        <Icon name="user" size={80} color="#fff" />
+      </View>
+
       <Text style={styles.title}>Crear Cuenta</Text>
 
       <TextInput
@@ -83,12 +88,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 20,
-    backgroundColor: '#1E3A8A',
+    backgroundColor: '#F9E79F', // Fondo amarillo pastel
   },
   title: {
     fontSize: 24,
     marginBottom: 30,
-    color: '#FFD700',
+    color: '#1E3A8A', // Título en azul oscuro
     textAlign: 'center',
   },
   input: {
@@ -96,24 +101,36 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     padding: 12,
     borderRadius: 8,
+    borderColor: '#B9A0D7', // Lavanda pastel para bordes
+    borderWidth: 1,
   },
   button: {
-    backgroundColor: '#FFD700',
+    backgroundColor: '#A8E6CF', // Botón verde pastel
     padding: 12,
     borderRadius: 8,
     alignItems: 'center',
     marginBottom: 15,
   },
   buttonText: {
-    color: '#1E3A8A',
+    color: '#1E3A8A', // Texto del botón en azul oscuro
     fontSize: 16,
     fontWeight: 'bold',
   },
   linkText: {
-    color: '#fff',
+    color: '#F4A6C2', // Rosa pastel para el enlace
     textAlign: 'center',
     textDecorationLine: 'underline',
     fontSize: 15,
+  },
+  iconContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#B9A0D7', // Fondo lavanda pastel para el círculo
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginBottom: 20,
+    alignSelf:"center"
   },
 });
 

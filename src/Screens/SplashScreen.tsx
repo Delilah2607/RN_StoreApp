@@ -10,9 +10,9 @@ const SplashScreen = ({ navigation }: any) => {
       try {
         const user = await AsyncStorage.getItem('user');
         if (user) {
-          navigation.replace('Main'); // Navegar a la pantalla principal si está logueado
+          navigation.replace('Main'); 
         } else {
-          navigation.replace('Login'); // Redirigir al Login si no hay sesión activa
+          navigation.replace('Login'); 
         }
       } catch (error) {
         console.error('Error checking login status:', error);
